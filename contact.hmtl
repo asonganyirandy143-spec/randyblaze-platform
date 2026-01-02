@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | RandyBlaze</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Contact Us</h1>
+</header>
+
+<main>
+  <form id="contactForm">
+    <label>Name:</label>
+    <input type="text" id="name" required>
+    <br>
+    <label>Email:</label>
+    <input type="email" id="email" required>
+    <br>
+    <label>Message:</label>
+    <textarea id="message" rows="5" required></textarea>
+    <br>
+    <button type="submit">Send</button>
+  </form>
+</main>
+
+<script>
+  const contactForm = document.getElementById("contactForm");
+
+  contactForm.onsubmit = (e) => {
+    e.preventDefault();
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    // For demo, just alert
+    alert(`Thank you ${name}! Your message has been received.`);
+    
+    // Clear form
+    contactForm.reset();
+  };
+</script>
+
+</body>
+</html>

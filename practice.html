@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice | RandyBlaze Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Pyodide (Python in browser) -->
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+</head>
+
+<body>
+
+<button id="darkToggle" class="dark-toggle">🌙 Dark Mode</button>
+
+<header>
+  <h1>Practice Playground 🧪</h1>
+  <p>Practice HTML & Python interactively</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="learn.html">Learn</a>
+  <a href="practice.html">Practice</a>
+</nav>
+
+<main class="lesson-container">
+
+  <!-- ================= HTML PRACTICE ================= -->
+  <section class="lesson-content">
+    <h2>HTML Practice</h2>
+
+    <textarea id="practiceEditor" rows="10" cols="60">
+<!-- Write your HTML code here -->
+<h1>Hello World</h1>
+<p>This is HTML practice.</p>
+    </textarea>
+
+    <button onclick="runPractice()">Run HTML</button>
+    <button onclick="copyPracticeCode()">Copy HTML</button>
+    <button onclick="savePracticeCode()">Save HTML</button>
+
+    <h4>HTML Output:</h4>
+    <iframe id="practiceOutput"></iframe>
+  </section>
+
+  <!-- ================= PYTHON PRACTICE ================= -->
+  <section class="lesson-content">
+    <h2>Python Practice 🐍</h2>
+
+    <textarea id="pythonCode" rows="10" cols="60">
+print("Hello from Python!")
+for i in range(5):
+    print("Number:", i)
+    </textarea>
+
+    <button onclick="runPython()">Run Python</button>
+
+    <h4>Python Output:</h4>
+    <pre id="pythonOutput">(Python output will appear here)</pre>
+  </section>
+
+</main>
+
+<footer style="text-align:center; margin:20px 0;">
+  <p>© 2026 RandyBlaze Coding Platform</p>
+</footer>
+
+<!-- Main JS -->
+<script src="app.js"></script>
+
+</body>
+</html>

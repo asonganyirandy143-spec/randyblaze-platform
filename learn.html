@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Learn Coding | RandyBlaze</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Learn Coding</h1>
+  <p>Interactive lessons for beginners</p>
+  <button id="darkToggle">🌙 Dark Mode</button>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="learn.html">Learn</a>
+  <a href="practice.html">Practice</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<div class="lesson-container">
+
+  <!-- Lesson Search -->
+  <input type="text" id="lessonSearch" placeholder="Search lessons..." onkeyup="searchLessons()">
+
+  <!-- Lesson buttons -->
+  <aside class="lesson-menu">
+    <button onclick="loadLesson(0)">HTML Basics</button>
+    <button onclick="loadLesson(1)">HTML Headings</button>
+    <button onclick="loadLesson(2)">HTML Links</button>
+  </aside>
+
+  <!-- Lesson content -->
+  <section class="lesson-content">
+    <div id="lessonBox">
+      <h2>Choose a lesson</h2>
+      <p>Click a lesson to start learning.</p>
+    </div>
+
+    <div class="lesson-nav">
+      <button onclick="prevLesson()">⬅ Prev</button>
+      <button onclick="nextLesson()">Next ➡</button>
+    </div>
+
+    <!-- Try it yourself editor -->
+    <h3>Try it yourself:</h3>
+    <textarea id="codeEditor" rows="8" cols="50">
+<!-- Type your code here -->
+    </textarea>
+    <br>
+    <button onclick="runCode()">Run Code</button>
+    <button onclick="copyCode()">Copy Code</button>
+    <button onclick="practiceLesson()">Practice This Lesson</button>
+
+    <h4>Output:</h4>
+    <iframe id="output" style="width:100%; height:150px; border:1px solid #000;"></iframe>
+
+    <!-- AI Code Helper -->
+    <h3>Code Helper AI 🤖</h3>
+    <input type="text" id="aiInput" placeholder="Ask a coding question">
+    <button onclick="askAI()">Ask</button>
+    <p id="aiResponse"></p>
+  </section>
+
+</div>
+
+<script src="app.js"></script>
+
+<script>
+  // AI Code Helper
+  const aiResponses = {
+    "link": "Use <a href='url'>Link Text</a> to create links in HTML.",
+    "heading": "HTML headings range from <h1> to <h6> for different sizes.",
+    "paragraph": "Use <p>Your text</p> to create a paragraph.",
+    "image": "Use <img src='image.jpg' alt='description'> to add images."
+  };
+
+  function askAI() {
+    const input = document.getElementById("aiInput").value.toLowerCase();
+    const response = aiResponses[input] || "Sorry, I don't have an answer for that yet!";
+    document.getElementById("aiResponse").textContent = response;
+  }
+
+  // Search Lessons
+  function searchLessons() {
+    const query = document.getElementById("lessonSearch").value.toLowerCase();
+    const buttons = document.querySelectorAll(".lesson-menu button");
+    buttons.forEach(btn => {
+      if (btn.textContent.toLowerCase().includes(query)) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

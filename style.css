@@ -1,0 +1,169 @@
+/* ==================== General Reset ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f0f0f0;
+  color: #222;
+  line-height: 1.5;
+  padding: 0 20px;
+}
+
+header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+header p {
+  margin-top: 5px;
+  font-size: 1.1rem;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #222;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #0077cc;
+}
+
+button {
+  padding: 8px 14px;
+  margin: 5px 0;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  background-color: #0077cc;
+  color: white;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+input, textarea {
+  padding: 6px;
+  width: 100%;
+  margin: 5px 0 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-family: monospace;
+  font-size: 1rem;
+}
+
+/* ==================== Lesson Layout ==================== */
+.lesson-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.lesson-menu {
+  flex: 1 1 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lesson-content {
+  flex: 3 1 500px;
+}
+
+.lesson-nav {
+  margin: 10px 0;
+}
+
+/* ==================== Editor & Output ==================== */
+#codeEditor, #practiceEditor, #pythonCode {
+  width: 100%;
+  height: 300px;           /* bigger editor height */
+  font-family: monospace;
+  font-size: 1.1rem;       /* readable font */
+  padding: 10px;
+}
+
+#iframe, #practiceOutput {
+  border: 1px solid #000;
+  width: 100%;
+  height: 300px;           /* bigger output */
+  margin-top: 10px;
+  padding: 10px;
+  overflow: auto;          /* scroll if content overflows */
+}
+
+#pythonOutput {
+  background-color: #f0f0f0;   /* light gray background */
+  color: #222;                  /* text color */
+  border: 1px solid #000;       /* border */
+  width: 100%;
+  height: 300px;                /* taller */
+  padding: 10px;
+  overflow: auto;               /* scroll if output is large */
+  white-space: pre-wrap;        /* preserve line breaks */
+  font-family: monospace;       /* code-like font */
+  font-size: 1rem;              /* readable text */
+}
+
+/* ==================== Dark Mode ==================== */
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark-mode nav a {
+  color: #f0f0f0;
+}
+
+body.dark-mode button {
+  background-color: #1e88e5;
+  color: #fff;
+}
+
+body.dark-mode button:hover {
+  background-color: #1565c0;
+}
+
+body.dark-mode input, body.dark-mode textarea {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  border: 1px solid #555;
+}
+
+body.dark-mode #pythonOutput {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  border: 1px solid #555;
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 768px) {
+  .lesson-container {
+    flex-direction: column;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  .lesson-menu, .lesson-content {
+    flex: 1 1 100%;
+  }
+}/

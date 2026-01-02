@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | RandyBlaze</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Login to RandyBlaze</h1>
+</header>
+
+<main>
+  <form id="loginForm">
+    <label>Username:</label>
+    <input type="text" id="username" required>
+    <br>
+    <label>Password:</label>
+    <input type="password" id="password" required>
+    <br>
+    <button type="submit">Login</button>
+  </form>
+  <p>Don't have an account? <button id="signupBtn">Sign Up</button></p>
+</main>
+
+<script>
+  const loginForm = document.getElementById("loginForm");
+  const signupBtn = document.getElementById("signupBtn");
+
+  signupBtn.onclick = () => {
+    const username = prompt("Enter a new username:");
+    const password = prompt("Enter a new password:");
+    if (username && password) {
+      localStorage.setItem("user_" + username, password);
+      alert("Signup successful! You can now login.");
+    }
+  };
+
+  loginForm.onsubmit = (e) => {
+    e.preventDefault();
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const savedPass = localStorage.getItem("user_" + username);
+
+    if (savedPass && savedPass === password) {
+      alert("Login successful!");
+      window.location.href = "index.html";
+    } else {
+      alert("Invalid username or password!");
+    }
+  };
+</script>
+
+</body>
+</html>

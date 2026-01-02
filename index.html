@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RandyBlaze | Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Welcome to RandyBlaze Coding Platform</h1>
+  <p>Learn, Practice, and Master HTML & CSS</p>
+  <button id="darkToggle">🌙 Dark Mode</button>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="learn.html">Learn</a>
+  <a href="practice.html">Practice</a>
+  <a href="contact.html">Contact</a>
+  <a href="login.html">Login</a>
+</nav>
+
+<main>
+  <section>
+    <h2>Start Learning</h2>
+    <p>Click on Learn to view lessons and start coding!</p>
+    <a href="learn.html"><button>Go to Learn</button></a>
+  </section>
+
+  <section>
+    <h2>Practice Your Code</h2>
+    <p>Try coding exercises and see the output instantly!</p>
+    <a href="practice.html"><button>Go to Practice</button></a>
+  </section>
+</main>
+
+<script>
+  // Dark mode toggle
+  const darkToggle = document.getElementById("darkToggle");
+  darkToggle.onclick = () => {
+    document.body.classList.toggle("dark-mode");
+  };
+</script>
+
+</body>
+</html>
